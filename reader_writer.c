@@ -68,7 +68,7 @@ void reader_exitW(struct reader_writer *rw)
     pthread_mutex_lock(&rw->mut);
     rw->readers_active--;
     if (rw->readers_active == 0)
-        pthread_cond_signal(&rw->con);
+        pthread_cond_broadcast(&rw->con);
     pthread_mutex_unlock(&rw->mut);
 }
 

@@ -1,4 +1,5 @@
 #include <pthread.h>
+#include <stdbool.h>
 
 struct reader_writer
 {
