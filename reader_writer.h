@@ -1,4 +1,4 @@
-
+#include <pthread.h>
 
 struct reader_writer
 {
