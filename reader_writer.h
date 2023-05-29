@@ -11,7 +11,6 @@ struct reader_writer
 };
 
 void reader_writer_init(struct reader_writer *rw);
-
 void reader_enterR(struct reader_writer *rw);
 void reader_exitR(struct reader_writer *rw);
 void reader_enterW(struct reader_writer *rw);
