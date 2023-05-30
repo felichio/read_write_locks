@@ -68,6 +68,8 @@ int main()
         pthread_join(writers[i], NULL);
         pthread_join(readers[i], NULL);
     }
+
+    reader_writer_destroy(&rw);
     
 
 

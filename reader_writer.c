@@ -15,6 +15,16 @@ void reader_writer_init(struct reader_writer *rw)
     pthread_cond_init(&rw->con, NULL);
 }
 
+void reader_writer_destroy(struct reader_writer *rw)
+{
+    rw->readers_active = 0;
+    rw->readers_waiting = 0;
+    rw->writer_active = false;
+    rw->writers_waiting = 0;
+    pthread_mutex_destroy(&rw->mut);
+    pthread_cond_destroy(&rw->con);
+}
+
 void reader_enterR(struct reader_writer *rw)
 {
     pthread_mutex_lock(&rw->mut);
